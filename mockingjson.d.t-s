@@ -1,0 +1,15 @@
+type config = {
+  url: string;
+  method: string;
+  baseURL: string;
+};
+
+type MockingJson = {
+  start: () => void;
+  useMockingjson: (config: config) => config;
+};
+
+declare module 'mockingjson' {
+  const mockingjson: MockingJson;
+  export = mockingjson;
+}
